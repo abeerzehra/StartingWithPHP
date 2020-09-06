@@ -32,7 +32,7 @@
     $sum =0;
     //Avg temprature
     for($i=0 ; $i < sizeof($array) ; $i++){
-        $sum = $sum + $array{$i};
+        $sum = $sum + $array[$i];
     }
     $avg = $sum / sizeof($array);
 
