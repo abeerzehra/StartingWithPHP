@@ -13,8 +13,8 @@
     }
 
     echo "<br>";
-    echo "Factorial of the number is:-";
-    echo $factorial;
+    echo "Factorial of the number is:-$factorial <br />";
+    
 
     echo "<br>";
     echo "<br>";
@@ -23,20 +23,32 @@
 
     // Write a php script to calculate and display:
     // Average temperature, 
-    // Seven lowest temperatures
-    // Seven highest temperatures
 
-    $array[]= array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73);
+    $array= array(78, 60, 62, 68, 71, 68, 73, 85, 66, 64, 76, 63, 75, 76, 73, 68, 62, 73, 72, 65, 74, 62, 62, 65, 64, 68, 73, 75, 79, 73);
 
     // print_r($array);
     $sum =0;
+    $arr_size=count($array);
     //Avg temprature
-    for($i=0 ; $i < sizeof($array) ; $i++){
+    for($i=0 ; $i < $arr_size ; $i++){
         $sum = $sum + $array[$i];
     }
-    $avg = $sum / sizeof($array);
+    $avg = $sum / $arr_size;
 
-    echo "Average temprature :-".$avg;
+    echo "Average temprature :-".round($avg,1);
+
+    // Seven lowest temperatures
+    sort($array);
+    echo "<br>";
+    echo "</br> Seven lowest temperatures:- </br> ";
+    $result= array_slice($array,0,7);
+    print_r($result);
+
+    // Seven highest temperatures
+
+    echo "</br> Seven highest temperatures:- </br> ";
+    $result= array_slice($array,-7,7);
+    print_r($result);
  
 
 ?>
